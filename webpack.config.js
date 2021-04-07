@@ -30,7 +30,7 @@ module.exports = {
       js: path.resolve(__dirname, "src/js"),
       ts: path.resolve(__dirname, "src/ts"),
       css: path.resolve(__dirname, "src/css"),
-      components: path.resolve(__dirname, "src/components"),
+      components: path.resolve(__dirname, "src/ts/components"),
       templates: path.resolve(__dirname, "src/templates"),
       assets: path.resolve(__dirname, "assets"),
     },
