@@ -1,33 +1,21 @@
-import React, { useEffect, useState } from "react";
-
-import Test from "components/test";
-import Header from "components/header";
-import Search from "components/search";
-import Spinner from "components/spinner";
-
-import TestModel from "ts/model/test-model";
+import React from "react";
+import { BrowserRouter, Route } from "react-router-dom";
+import ListPage from "components/pages/list-page";
+import Results from "components/pages/results";
 
 export default function App() {
-  const [model, setModel] = useState(null);
-
-  useEffect(() => {
-    const testModel = new TestModel();
-    testModel.fetch().then(() => {
-      setModel(testModel);
-    });
-  });
-
-  let content = <Spinner></Spinner>;
-  if (model?.tests?.length) {
-    content = model.tests.map((t) => <Test test={t}></Test>);
-  }
-
   return (
-    <div className="container">
-      <h1 className="heading">Dashboard</h1>
-      <Search></Search>
-      <Header></Header>
-      {content}
-    </div>
+    <BrowserRouter>
+      {/* basename="/weather-app/"*/}
+      <Route path="/" exact component={ListPage} />
+      <Route
+        path="/finalize/:testId"
+        render={(props) => <Results title="Finalize" {...props}></Results>}
+      />
+      <Route
+        path="/results/:testId"
+        render={(props) => <Results title="Results" {...props}></Results>}
+      />
+    </BrowserRouter>
   );
 }

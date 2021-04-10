@@ -37,6 +37,7 @@ module.exports = {
   },
   devServer: {
     contentBase: path.resolve(__dirname, "dist"),
+    historyApiFallback: true,
   },
   devtool: "source-map",
   plugins: plugins,

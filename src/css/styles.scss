@@ -5,22 +5,24 @@ body {
   color: #474747;
 }
 
+h1 {
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 26px;
+  margin: 0 0 40px 0;
+
+  color: #222222;
+}
+
 .container {
   max-width: 1200px;
   margin: auto;
 }
 
-.heading {
-  font-family: "Montserrat", sans-serif;
-  font-style: normal;
-  font-weight: bold;
-  font-size: 26px;
-  line-height: 32px;
-  display: flex;
-  align-items: center;
-  margin: 0 0 40px 0;
-
-  color: #222222;
+.content__wrapper {
+  position: relative;
+  min-height: 400px;
 }
 
 .search {
@@ -42,10 +44,59 @@ body {
     padding: 10px;
   }
   &__section {
-    padding: 0px 5px;
-    text-transform: uppercase;
-    font-size: 11px;
-    font-weight: 500;
+    button {
+      cursor: pointer;
+      font-weight: 500;
+      font-size: 11px;
+      text-transform: uppercase;
+      background: transparent;
+      border: 1px dashed transparent;
+      border-radius: 3px;
+      position: relative;
+      span {
+        padding: 2px 20px 2px 5px;
+        border: 1px dashed transparent;
+      }
+      span:focus {
+        outline: none;
+      }
+      &:focus {
+        span {
+          border: 1px dashed rgb(172, 172, 172);
+        }
+      }
+    }
+    &-sort-asc,
+    &-sort-desc {
+      button:before {
+        content: "";
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 1px;
+        height: 5px;
+        background: rgb(172, 172, 172);
+        transform: translate(-5px, 5px) rotate(-45deg);
+      }
+      button:after {
+        content: "";
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 1px;
+        height: 5px;
+        background: rgb(172, 172, 172);
+        transform: translate(-8px, 5px) rotate(45deg);
+      }
+    }
+    &-sort-asc {
+      button:before {
+        transform: translate(-5px, 5px) rotate(45deg);
+      }
+      button:after {
+        transform: translate(-8px, 5px) rotate(-45deg);
+      }
+    }
   }
 }
 
@@ -89,13 +140,23 @@ body {
 
   &__section-status {
     font-weight: 500;
-    &-green {
+    text-transform: capitalize;
+    &-online {
       color: #1bda9d;
+    }
+    &-stopped {
+      color: #fe4848;
+    }
+    &-draft {
+      color: #5c5c5c;
+    }
+    &-paused {
+      color: #ff8346;
     }
   }
 
   &__button {
-    border-radius: 15px;
+    border-radius: 10px;
     background: #2ee5ac;
     width: 95px;
     height: 30px;
@@ -103,5 +164,15 @@ body {
     font-weight: 600;
     font-size: 12px;
     color: #fff;
+    text-transform: capitalize;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    &-finalize {
+      background: #7d7d7d;
+    }
+    &:focus {
+      border: 1px solid black;
+    }
   }
 }

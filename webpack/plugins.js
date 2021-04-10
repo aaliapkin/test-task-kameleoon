@@ -10,6 +10,7 @@ const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 module.exports = [
   new HtmlWebpackPlugin({
     template: path.resolve(root, "src/templates/index.html"),
+    publicPath: "/",
   }),
   new MiniCssExtractPlugin(),
   new CleanWebpackPlugin(),
