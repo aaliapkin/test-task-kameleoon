@@ -5,8 +5,8 @@ import Results from "components/pages/results"
 
 export default function App() {
   return (
-    <BrowserRouter>
-      {/* basename="/weather-app/"*/}
+    <BrowserRouter basename="/test-task-kameleoon/">
+      {/* basename="/test-task-kameleoon/"*/}
       <Route path="/" exact component={ListPage} />
       <Route
         path="/finalize/:testId"

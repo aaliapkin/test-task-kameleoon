@@ -1,9 +1,9 @@
 {
-  "name": "kameleoon",
+  "name": "test-task-kameleoon",
   "version": "1.0.0",
   "description": "",
   "main": "index.ts",
-  "url": "http://aaliapkin.github.io/kameleoon",
+  "url": "http://aaliapkin.github.io/test-task-kameleoon",
   "repository": {
     "type": "git",
     "url": "ssh://git@github.com:aaliapkin/task.git"

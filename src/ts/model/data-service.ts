@@ -1,4 +1,6 @@
-const BaseUrl = "http://localhost:3100/"
+//const BaseUrl = "http://localhost:3100/"
+
+const BaseUrl = "https://test-task-kameleoon.herokuapp.com/"
 
 import { ISite, ITest } from "ts/model/test-model"
 
