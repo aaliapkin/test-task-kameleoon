@@ -20,13 +20,12 @@ body {
   margin: auto;
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
   min-height: 100vh;
 }
 
 .content__wrapper {
   position: relative;
-  flex: 1 1 600px;
+  flex: 1 1 auto;
   display: flex;
   flex-direction: column;
 }

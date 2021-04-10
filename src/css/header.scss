@@ -1,7 +1,7 @@
 .header {
   &__grid {
     display: grid;
-    grid-template-columns: 4fr repeat(2, 1fr) 2fr 1fr 1fr;
+    grid-template-columns: 4fr repeat(2, 1fr) 2fr 1fr;
     padding: 10px;
   }
   &__section {
