@@ -5,9 +5,9 @@ var path = require("path");
 var rules = [
   require("./webpack/loaders/glsl"),
   require("./webpack/loaders/css"),
-  require("./webpack/loaders/svg"),
   require("./webpack/loaders/babel"),
   require("./webpack/loaders/html"),
+  require("./webpack/loaders/image"),
 ];
 
 var plugins = require("./webpack/plugins");

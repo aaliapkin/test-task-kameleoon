@@ -22,7 +22,7 @@ function Section(props) {
   return (
     <section className={className.join(" ")}>
       <button onClick={() => onSort(field)}>
-        <span tabindex="-1">{field}</span>
+        <span tabIndex="-1">{field}</span>
       </button>
     </section>
   );

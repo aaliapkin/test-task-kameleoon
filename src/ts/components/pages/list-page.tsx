@@ -23,6 +23,7 @@ export default function ListPage() {
   }, []);
 
   let tests = model?.tests;
+  let count = 0;
 
   let content = <Spinner></Spinner>;
   if (tests?.length) {
@@ -37,6 +38,7 @@ export default function ListPage() {
       tests = tests.sort(sortFunc(field, dir));
     }
     content = tests.map((t) => <Test test={t} key={t.id}></Test>);
+    count = tests.length;
   }
 
   const onSort = function (field) {
@@ -52,7 +54,7 @@ export default function ListPage() {
   return (
     <div className="container">
       <h1>Dashboard</h1>
-      <Search filter={filter} onFilter={onFilter}></Search>
+      <Search filter={filter} onFilter={onFilter} count={count}></Search>
       <Header sort={sort} onSort={onSort}></Header>
       <div className="content__wrapper">{content}</div>
     </div>

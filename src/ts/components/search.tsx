@@ -1,6 +1,8 @@
 import React from "react";
 
-export default function Search({ filter, onFilter }) {
+import "css/search.scss";
+
+export default function Search({ count, filter, onFilter }) {
   const onChange = (e) => {
     const value = e.target.value;
     onFilter(value);
@@ -14,6 +16,7 @@ export default function Search({ filter, onFilter }) {
         value={filter || ""}
         onChange={onChange}
       />
+      <div className="search__count">{count} tests</div>
     </div>
   );
 }
