@@ -1,0 +1,80 @@
+.test {
+  &__container {
+    background: #fff;
+    border-radius: 3px;
+    margin-bottom: 5px;
+    border-left: 4px solid #e14165;
+    cursor: pointer;
+    &:hover {
+      box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.15);
+    }
+  }
+
+  &__grid {
+    display: grid;
+    grid-template-columns: 4fr repeat(2, 1fr) 2fr 1fr 1fr;
+    align-items: center;
+    padding: 10px;
+    margin: 0 0 0 -4px;
+  }
+
+  &__section {
+    height: 40px;
+    display: flex;
+    align-items: center;
+    font-size: 13px;
+    font-weight: 400;
+    padding: 5px;
+  }
+
+  &__section-name {
+    h3 {
+      font-size: 13px;
+      font-weight: 500;
+    }
+  }
+
+  &__section-type {
+  }
+
+  &__section-status {
+  }
+
+  &__section-status {
+    font-weight: 500;
+    text-transform: capitalize;
+    &-online {
+      color: #1bda9d;
+    }
+    &-stopped {
+      color: #fe4848;
+    }
+    &-draft {
+      color: #5c5c5c;
+    }
+    &-paused {
+      color: #ff8346;
+    }
+  }
+
+  &__button {
+    border-radius: 10px;
+    background: #2ee5ac;
+    width: 95px;
+    height: 30px;
+    font-family: "Montserrat", sans-serif;
+    font-weight: 600;
+    font-size: 12px;
+    color: #fff;
+    text-transform: capitalize;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    &-finalize {
+      background: #7d7d7d;
+    }
+    &:focus {
+      border: 1px solid black;
+    }
+  }
+}

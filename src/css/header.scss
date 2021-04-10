@@ -1,0 +1,62 @@
+.header {
+  &__grid {
+    display: grid;
+    grid-template-columns: 4fr repeat(2, 1fr) 2fr 1fr 1fr;
+    padding: 10px;
+  }
+  &__section {
+    button {
+      cursor: pointer;
+      font-weight: 500;
+      font-size: 11px;
+      text-transform: uppercase;
+      background: transparent;
+      border: 1px dashed transparent;
+      border-radius: 3px;
+      position: relative;
+      span {
+        padding: 2px 20px 2px 5px;
+        border: 1px dashed transparent;
+      }
+      span:focus {
+        outline: none;
+      }
+      &:focus {
+        span {
+          border: 1px dashed rgb(172, 172, 172);
+        }
+      }
+    }
+    &-sort-asc,
+    &-sort-desc {
+      button span:before {
+        content: "";
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 1px;
+        height: 5px;
+        background: rgb(172, 172, 172);
+        transform: translate(-5px, 3px) rotate(-45deg);
+      }
+      button span:after {
+        content: "";
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 1px;
+        height: 5px;
+        background: rgb(172, 172, 172);
+        transform: translate(-8px, 3px) rotate(45deg);
+      }
+    }
+    &-sort-asc {
+      button span:before {
+        transform: translate(-5px, 3px) rotate(45deg);
+      }
+      button span:after {
+        transform: translate(-8px, 3px) rotate(-45deg);
+      }
+    }
+  }
+}

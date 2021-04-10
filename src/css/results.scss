@@ -1,0 +1,26 @@
+.results {
+  &__element {
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 14px;
+  }
+
+  &__wrapper {
+    flex: 1 1 auto;
+  }
+
+  &__back {
+    background: transparent;
+    align-self: flex-start;
+    text-transform: capitalize;
+    font-family: Nunito;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 18px;
+    padding: 0 0 0 24px;
+    background-image: url(assets/svg/back.svg);
+    background-position: 0 50%;
+    background-repeat: no-repeat;
+  }
+}

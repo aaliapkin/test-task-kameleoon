@@ -1,5 +1,7 @@
 import React from "react";
 
+import "css/header.scss";
+
 export default function Header(props) {
   return (
     <header className="header__grid">

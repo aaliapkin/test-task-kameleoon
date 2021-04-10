@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 
 import TestModel from "ts/model/test-model";
 import Spinner from "components/spinner";
+import "css/results.scss";
 
 export default function Results(props) {
   const { title } = props;
@@ -23,16 +24,18 @@ export default function Results(props) {
     const { name } = model.tests.find((el) => el.id === +id);
     content = (
       <React.Fragment>
-        <h3>{name}</h3>
+        <h3 className="results__element">{name}</h3>
       </React.Fragment>
     );
   }
 
   return (
-    <div>
-      <h1>{title}</h1>
-      {content}
-      <button onClick={props.history.goBack}>back</button>
+    <div className="container">
+      <h1 className="heading">{title}</h1>
+      <div className="results__wrapper">{content}</div>
+      <button onClick={props.history.goBack} className="results__back">
+        back
+      </button>
     </div>
   );
 }
