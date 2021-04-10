@@ -1,7 +1,7 @@
-import React from "react";
-import "css/empty.scss";
+import React from "react"
+import "css/empty.scss"
 
-export default function Empty({ onClear }) {
+export default function Empty({ onClear }: { onClear: () => void }) {
   return (
     <div className="empty__wrapper">
       <h3 className="empty__message">Your search did not match any results.</h3>
@@ -9,5 +9,5 @@ export default function Empty({ onClear }) {
         reset
       </button>
     </div>
-  );
+  )
 }

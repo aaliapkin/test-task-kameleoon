@@ -1,7 +1,7 @@
-import React from "react";
-import { BrowserRouter, Route } from "react-router-dom";
-import ListPage from "components/pages/list-page";
-import Results from "components/pages/results";
+import React from "react"
+import { BrowserRouter, Route } from "react-router-dom"
+import ListPage from "components/pages/list-page"
+import Results from "components/pages/results"
 
 export default function App() {
   return (
@@ -17,5 +17,5 @@ export default function App() {
         render={(props) => <Results title="Results" {...props}></Results>}
       />
     </BrowserRouter>
-  );
+  )
 }

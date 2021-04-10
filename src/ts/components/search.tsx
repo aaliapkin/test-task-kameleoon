@@ -1,12 +1,20 @@
-import React from "react";
+import React from "react"
 
-import "css/search.scss";
+import "css/search.scss"
 
-export default function Search({ count, filter, onFilter }) {
-  const onChange = (e) => {
-    const value = e.target.value;
-    onFilter(value);
-  };
+export default function Search({
+  count,
+  filter,
+  onFilter,
+}: {
+  count: number
+  filter: string
+  onFilter: (x: string) => void
+}) {
+  const onChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const value = e.target.value
+    onFilter(value)
+  }
 
   return (
     <div className="search">
@@ -18,5 +26,5 @@ export default function Search({ count, filter, onFilter }) {
       />
       <div className="search__count">{count} tests</div>
     </div>
-  );
+  )
 }

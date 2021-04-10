@@ -1,1 +1,1 @@
-export let testStatus = ["Online", "Paused", "Stopped", "Draft"];
+export const testStatus = ["Online", "Paused", "Stopped", "Draft"]
