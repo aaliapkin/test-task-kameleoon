@@ -10,6 +10,9 @@
     "module": "es6",
     "jsx": "react",
     "noImplicitAny": true,
-    "allowSyntheticDefaultImports": true
+    "allowSyntheticDefaultImports": true,
+    "moduleResolution": "node",
+    "lib": ["dom", "esnext"],
+    "esModuleInterop": true
   }
 }

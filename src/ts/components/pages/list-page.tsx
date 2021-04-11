@@ -23,13 +23,19 @@ const ListPage: React.FC = () => {
   const [filter, setFilter] = useState<string>(null)
 
   useEffect(() => {
+    let mounted = true
     if (true || !model) {
       setLoading(true)
       const testModel = new TestModel()
       testModel.fetch().then(() => {
-        setModel(testModel)
-        setLoading(false)
+        if (mounted) {
+          setModel(testModel)
+          setLoading(false)
+        }
       })
+    }
+    return () => {
+      mounted = false
     }
   }, [])
 

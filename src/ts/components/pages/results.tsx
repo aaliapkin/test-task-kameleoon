@@ -20,11 +20,18 @@ export default function Results(props: IProps) {
   const history = useHistory()
 
   useEffect(() => {
+    let mounted = true
     if (!model) {
       const testModel = new TestModel()
       testModel.fetch().then(() => {
-        setModel(testModel)
+        if (mounted) {
+          setModel(testModel)
+        }
       })
+    }
+
+    return () => {
+      mounted = false
     }
   }, [model])
 
