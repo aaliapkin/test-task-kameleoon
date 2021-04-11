@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react"
 import { RouteComponentProps, useHistory } from "react-router"
 
 import TestModel from "ts/model/test-model"
-import Spinner from "components/spinner"
+import Spinner from "components/parts/spinner"
 import "css/results.scss"
 
 interface MatchParams {
