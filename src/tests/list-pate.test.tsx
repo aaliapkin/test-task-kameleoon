@@ -80,11 +80,8 @@ test("list-page should render data", async () => {
   )
 
   const text = await screen.findByText("Prototype of the new map")
-  console.log(text)
-
   expect(text).toBeInTheDocument()
 
   const text1 = await screen.findByText("Dark theme test")
-  console.log(text1)
   expect(text1).toBeInTheDocument()
 })
