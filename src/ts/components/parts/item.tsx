@@ -7,7 +7,7 @@ interface IProps {
   test: ITest
 }
 
-export default function Test(props: IProps) {
+export default function Item(props: IProps) {
   const {
     test: { id, name, site, status, type, color },
   } = props

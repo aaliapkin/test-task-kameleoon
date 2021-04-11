@@ -2,3 +2,4 @@
 
 -- tsify
 -- tests
+-- handle 404

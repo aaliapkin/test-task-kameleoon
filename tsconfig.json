@@ -3,7 +3,7 @@
     "baseUrl": "./",
     "paths": {
       "ts/*": ["./src/ts/*"],
-      "components/*": ["./src/components/*"]
+      "components/*": ["./src/ts/components/*"]
     },
     "outDir": "./dist",
     "target": "es5",

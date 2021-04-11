@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from "react"
 
-import Test from "components/test"
-import Header from "components/header"
-import Search from "components/search"
-import Spinner from "components/spinner"
-import Empty from "components/empty"
+import Item from "components/parts/item"
+import Header from "components/parts/header"
+import Search from "components/parts/search"
+import Spinner from "components/parts/spinner"
+import Empty from "components/parts/empty"
 
 import TestModel, { ITest, ITestStringKeys } from "ts/model/test-model"
 import { testStatus } from "ts/model/test-status"
@@ -64,7 +64,7 @@ const ListPage: React.FC = () => {
       const { field, dir } = sort
       tests = tests.sort(sortFunc(field, dir))
     }
-    content = tests.map((t) => <Test test={t} key={t.id}></Test>)
+    content = tests.map((t) => <Item test={t} key={t.id}></Item>)
     count = tests.length
   }
 
