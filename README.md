@@ -1,5 +1,5 @@
-## TODO:
+npm run build - build
 
--- tsify
--- tests
--- handle 404
+npm run serve - devServer
+
+npm run test - a couple of tests

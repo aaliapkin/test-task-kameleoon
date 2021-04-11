@@ -5,6 +5,7 @@ import Header from "components/parts/header"
 import Search from "components/parts/search"
 import Spinner from "components/parts/spinner"
 import Empty from "components/parts/empty"
+import Error from "components/parts/error"
 
 import TestModel, { ITest, ITestStringKeys } from "ts/model/test-model"
 import { testStatus } from "ts/model/test-status"
@@ -16,10 +17,11 @@ interface ISort {
   dir: boolean
 }
 
-const ListPage: React.FC = () => {
+export default () => {
   const [model, setModel] = useState<TestModel>(null)
   const [sort, setSort] = useState<ISort>(null)
   const [loading, setLoading] = useState<boolean>(true)
+  const [error, setError] = useState<boolean>(false)
   const [filter, setFilter] = useState<string>(null)
 
   useEffect(() => {
@@ -27,12 +29,19 @@ const ListPage: React.FC = () => {
     if (true || !model) {
       setLoading(true)
       const testModel = new TestModel()
-      testModel.fetch().then(() => {
-        if (mounted) {
-          setModel(testModel)
-          setLoading(false)
-        }
-      })
+      testModel
+        .fetch()
+        .then(() => {
+          if (mounted) {
+            setModel(testModel)
+            setLoading(false)
+          }
+        })
+        .catch(() => {
+          if (mounted) {
+            setError(true)
+          }
+        })
     }
     return () => {
       mounted = false
@@ -52,7 +61,6 @@ const ListPage: React.FC = () => {
   let tests = model?.tests
   let count = 0
 
-  let content: JSX.Element | JSX.Element[] = <Spinner></Spinner>
   if (tests?.length) {
     if (filter) {
       tests = tests.filter(
@@ -64,12 +72,8 @@ const ListPage: React.FC = () => {
       const { field, dir } = sort
       tests = tests.sort(sortFunc(field, dir))
     }
-    content = tests.map((t) => <Item test={t} key={t.id}></Item>)
-    count = tests.length
-  }
 
-  if (!loading && !tests?.length) {
-    content = <Empty onClear={() => onFilter("")}></Empty>
+    count = tests.length
   }
 
   return (
@@ -77,8 +81,47 @@ const ListPage: React.FC = () => {
       <h1 className="heading">Dashboard</h1>
       <Search filter={filter} onFilter={onFilter} count={count}></Search>
       <Header sort={sort} onSort={onSort}></Header>
-      <div className="content__wrapper">{content}</div>
+      <div className="content__wrapper">
+        <Content
+          loading={loading}
+          error={error}
+          tests={tests}
+          onFilter={onFilter}
+        ></Content>
+      </div>
     </div>
+  )
+}
+
+const Content = ({
+  error,
+  loading,
+  tests,
+  onFilter,
+}: {
+  error: boolean
+  loading: boolean
+  tests: Array<ITest>
+  onFilter: (x: string) => void
+}) => {
+  if (error) {
+    return <Error></Error>
+  }
+
+  if (loading) {
+    return <Spinner></Spinner>
+  }
+
+  if (!tests?.length) {
+    return <Empty onClear={() => onFilter("")}></Empty>
+  }
+
+  return (
+    <>
+      {tests.map((t) => (
+        <Item test={t} key={t.id}></Item>
+      ))}
+    </>
   )
 }
 
@@ -107,5 +150,3 @@ function sortFunc(field: ITestStringKeys, dir: boolean) {
     }
   }
 }
-
-export default ListPage
