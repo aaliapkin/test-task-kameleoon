@@ -1,6 +1,6 @@
-"use strict";
+"use strict"
 
-var path = require("path");
+var path = require("path")
 
 var rules = [
   require("./webpack/loaders/glsl"),
@@ -8,9 +8,9 @@ var rules = [
   require("./webpack/loaders/babel"),
   require("./webpack/loaders/html"),
   require("./webpack/loaders/image"),
-];
+]
 
-var plugins = require("./webpack/plugins");
+var plugins = require("./webpack/plugins")
 
 module.exports = {
   mode: "development",
@@ -38,7 +38,8 @@ module.exports = {
   devServer: {
     contentBase: path.resolve(__dirname, "dist"),
     historyApiFallback: true,
+    publicPath: "/test-task-kameleoon/",
   },
   devtool: "source-map",
   plugins: plugins,
-};
+}
