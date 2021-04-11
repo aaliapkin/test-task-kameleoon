@@ -177,6 +177,8 @@ var _spinner = _interopRequireDefault(__webpack_require__(/*! components/parts/s
 
 var _empty = _interopRequireDefault(__webpack_require__(/*! components/parts/empty */ "./src/ts/components/parts/empty.tsx"));
 
+var _error = _interopRequireDefault(__webpack_require__(/*! components/parts/error */ "./src/ts/components/parts/error.tsx"));
+
 var _testModel = _interopRequireDefault(__webpack_require__(/*! ts/model/test-model */ "./src/ts/model/test-model.ts"));
 
 var _testStatus = __webpack_require__(/*! ts/model/test-status */ "./src/ts/model/test-status.ts");
@@ -189,10 +191,11 @@ function _getRequireWildcardCache() { if (typeof WeakMap !== "function") return 
 
 function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } if (obj === null || typeof obj !== "object" && typeof obj !== "function") { return { default: obj }; } var cache = _getRequireWildcardCache(); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj.default = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
 
-const ListPage = () => {
+var _default = () => {
   const [model, setModel] = (0, _react.useState)(null);
   const [sort, setSort] = (0, _react.useState)(null);
   const [loading, setLoading] = (0, _react.useState)(true);
+  const [error, setError] = (0, _react.useState)(false);
   const [filter, setFilter] = (0, _react.useState)(null);
   (0, _react.useEffect)(() => {
     let mounted = true;
@@ -204,6 +207,10 @@ const ListPage = () => {
         if (mounted) {
           setModel(testModel);
           setLoading(false);
+        }
+      }).catch(() => {
+        if (mounted) {
+          setError(true);
         }
       });
     }
@@ -229,8 +236,6 @@ const ListPage = () => {
   let tests = model?.tests;
   let count = 0;
 
-  let content = /*#__PURE__*/_react.default.createElement(_spinner.default, null);
-
   if (tests?.length) {
     if (filter) {
       tests = tests.filter(el => el.name.toLowerCase().indexOf(filter.toLowerCase()) !== -1);
@@ -244,17 +249,7 @@ const ListPage = () => {
       tests = tests.sort(sortFunc(field, dir));
     }
 
-    content = tests.map(t => /*#__PURE__*/_react.default.createElement(_item.default, {
-      test: t,
-      key: t.id
-    }));
     count = tests.length;
-  }
-
-  if (!loading && !tests?.length) {
-    content = /*#__PURE__*/_react.default.createElement(_empty.default, {
-      onClear: () => onFilter("")
-    });
   }
 
   return /*#__PURE__*/_react.default.createElement("div", {
@@ -270,7 +265,40 @@ const ListPage = () => {
     onSort: onSort
   }), /*#__PURE__*/_react.default.createElement("div", {
     className: "content__wrapper"
-  }, content));
+  }, /*#__PURE__*/_react.default.createElement(Content, {
+    loading: loading,
+    error: error,
+    tests: tests,
+    onFilter: onFilter
+  })));
+};
+
+exports.default = _default;
+
+const Content = ({
+  error,
+  loading,
+  tests,
+  onFilter
+}) => {
+  if (error) {
+    return /*#__PURE__*/_react.default.createElement(_error.default, null);
+  }
+
+  if (loading) {
+    return /*#__PURE__*/_react.default.createElement(_spinner.default, null);
+  }
+
+  if (!tests?.length) {
+    return /*#__PURE__*/_react.default.createElement(_empty.default, {
+      onClear: () => onFilter("")
+    });
+  }
+
+  return /*#__PURE__*/_react.default.createElement(_react.default.Fragment, null, tests.map(t => /*#__PURE__*/_react.default.createElement(_item.default, {
+    test: t,
+    key: t.id
+  })));
 };
 
 function sortFunc(field, dir) {
@@ -299,9 +327,6 @@ function sortFunc(field, dir) {
       }
   }
 }
-
-var _default = ListPage;
-exports.default = _default;
 
 /***/ }),
 
@@ -415,6 +440,36 @@ function Empty({
     className: "empty__reset-button",
     onClick: onClear
   }, "reset"));
+}
+
+/***/ }),
+
+/***/ "./src/ts/components/parts/error.tsx":
+/*!*******************************************!*\
+  !*** ./src/ts/components/parts/error.tsx ***!
+  \*******************************************/
+/***/ ((__unused_webpack_module, exports, __webpack_require__) => {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", ({
+  value: true
+}));
+exports.default = Error;
+
+var _react = _interopRequireDefault(__webpack_require__(/*! react */ "./node_modules/react/index.js"));
+
+__webpack_require__(/*! css/empty.scss */ "./src/css/empty.scss");
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function Error() {
+  return /*#__PURE__*/_react.default.createElement("div", {
+    className: "empty__wrapper"
+  }, /*#__PURE__*/_react.default.createElement("h3", {
+    className: "empty__message empty__message--error"
+  }, "Something went wrong. No data fetched."));
 }
 
 /***/ }),
