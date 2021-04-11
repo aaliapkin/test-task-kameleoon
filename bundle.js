@@ -107,128 +107,46 @@ function _setPrototypeOf(o, p) {
 /*!***********************************!*\
   !*** ./src/ts/components/app.tsx ***!
   \***********************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+/***/ ((__unused_webpack_module, exports, __webpack_require__) => {
 
 "use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (/* binding */ App)
-/* harmony export */ });
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/esm/react-router-dom.js");
-/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router/esm/react-router.js");
-/* harmony import */ var components_pages_list_page__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! components/pages/list-page */ "./src/ts/components/pages/list-page.tsx");
-/* harmony import */ var components_pages_results__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! components/pages/results */ "./src/ts/components/pages/results.tsx");
+
+
+Object.defineProperty(exports, "__esModule", ({
+  value: true
+}));
+exports.default = App;
+
+var _react = _interopRequireDefault(__webpack_require__(/*! react */ "./node_modules/react/index.js"));
+
+var _reactRouterDom = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/esm/react-router-dom.js");
+
+var _listPage = _interopRequireDefault(__webpack_require__(/*! components/pages/list-page */ "./src/ts/components/pages/list-page.tsx"));
+
+var _results = _interopRequireDefault(__webpack_require__(/*! components/pages/results */ "./src/ts/components/pages/results.tsx"));
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
 function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
 
-
-
-
-
 function App() {
-  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_3__.BrowserRouter, {
+  return /*#__PURE__*/_react.default.createElement(_reactRouterDom.BrowserRouter, {
     basename: "/test-task-kameleoon/"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_4__.Route, {
+  }, /*#__PURE__*/_react.default.createElement(_reactRouterDom.Route, {
     path: "/",
     exact: true,
-    component: components_pages_list_page__WEBPACK_IMPORTED_MODULE_1__.default
-  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_4__.Route, {
+    component: _listPage.default
+  }), /*#__PURE__*/_react.default.createElement(_reactRouterDom.Route, {
     path: "/finalize/:testId",
-    render: props => /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(components_pages_results__WEBPACK_IMPORTED_MODULE_2__.default, _extends({
+    render: props => /*#__PURE__*/_react.default.createElement(_results.default, _extends({
       title: "Finalize"
     }, props))
-  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_4__.Route, {
+  }), /*#__PURE__*/_react.default.createElement(_reactRouterDom.Route, {
     path: "/results/:testId",
-    render: props => /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(components_pages_results__WEBPACK_IMPORTED_MODULE_2__.default, _extends({
+    render: props => /*#__PURE__*/_react.default.createElement(_results.default, _extends({
       title: "Results"
     }, props))
   }));
-}
-
-/***/ }),
-
-/***/ "./src/ts/components/empty.tsx":
-/*!*************************************!*\
-  !*** ./src/ts/components/empty.tsx ***!
-  \*************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (/* binding */ Empty)
-/* harmony export */ });
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var css_empty_scss__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! css/empty.scss */ "./src/css/empty.scss");
-
-
-function Empty({
-  onClear
-}) {
-  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
-    className: "empty__wrapper"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("h3", {
-    className: "empty__message"
-  }, "Your search did not match any results."), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("button", {
-    className: "empty__reset-button",
-    onClick: onClear
-  }, "reset"));
-}
-
-/***/ }),
-
-/***/ "./src/ts/components/header.tsx":
-/*!**************************************!*\
-  !*** ./src/ts/components/header.tsx ***!
-  \**************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (/* binding */ Header)
-/* harmony export */ });
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var css_header_scss__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! css/header.scss */ "./src/css/header.scss");
-function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
-
-
-
-function Header(props) {
-  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("header", {
-    className: "header__grid"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(Section, _extends({
-    field: "name"
-  }, props)), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(Section, _extends({
-    field: "type"
-  }, props)), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(Section, _extends({
-    field: "status"
-  }, props)), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(Section, _extends({
-    field: "site"
-  }, props)), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("section", {
-    className: "header__section"
-  }));
-}
-
-function Section(props) {
-  const {
-    field,
-    sort,
-    onSort
-  } = props;
-  const className = ["header__section"];
-
-  if (sort && sort.field === field) {
-    className.push("header__section-sort-" + (sort.dir ? "asc" : "desc"));
-  }
-
-  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("section", {
-    className: className.join(" ")
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("button", {
-    onClick: () => onSort(field)
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", {
-    tabIndex: -1
-  }, field)));
 }
 
 /***/ }),
@@ -237,46 +155,62 @@ function Section(props) {
 /*!***********************************************!*\
   !*** ./src/ts/components/pages/list-page.tsx ***!
   \***********************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+/***/ ((__unused_webpack_module, exports, __webpack_require__) => {
 
 "use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
-/* harmony export */ });
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var components_test__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! components/test */ "./src/ts/components/test.tsx");
-/* harmony import */ var components_header__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! components/header */ "./src/ts/components/header.tsx");
-/* harmony import */ var components_search__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! components/search */ "./src/ts/components/search.tsx");
-/* harmony import */ var components_spinner__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! components/spinner */ "./src/ts/components/spinner.tsx");
-/* harmony import */ var components_empty__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! components/empty */ "./src/ts/components/empty.tsx");
-/* harmony import */ var ts_model_test_model__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ts/model/test-model */ "./src/ts/model/test-model.ts");
-/* harmony import */ var ts_model_test_status__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ts/model/test-status */ "./src/ts/model/test-status.ts");
-/* harmony import */ var css_list_scss__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! css/list.scss */ "./src/css/list.scss");
 
 
+Object.defineProperty(exports, "__esModule", ({
+  value: true
+}));
+exports.default = void 0;
 
+var _react = _interopRequireWildcard(__webpack_require__(/*! react */ "./node_modules/react/index.js"));
 
+var _item = _interopRequireDefault(__webpack_require__(/*! components/parts/item */ "./src/ts/components/parts/item.tsx"));
 
+var _header = _interopRequireDefault(__webpack_require__(/*! components/parts/header */ "./src/ts/components/parts/header.tsx"));
 
+var _search = _interopRequireDefault(__webpack_require__(/*! components/parts/search */ "./src/ts/components/parts/search.tsx"));
 
+var _spinner = _interopRequireDefault(__webpack_require__(/*! components/parts/spinner */ "./src/ts/components/parts/spinner.tsx"));
 
+var _empty = _interopRequireDefault(__webpack_require__(/*! components/parts/empty */ "./src/ts/components/parts/empty.tsx"));
 
+var _testModel = _interopRequireDefault(__webpack_require__(/*! ts/model/test-model */ "./src/ts/model/test-model.ts"));
+
+var _testStatus = __webpack_require__(/*! ts/model/test-status */ "./src/ts/model/test-status.ts");
+
+__webpack_require__(/*! css/list.scss */ "./src/css/list.scss");
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _getRequireWildcardCache() { if (typeof WeakMap !== "function") return null; var cache = new WeakMap(); _getRequireWildcardCache = function () { return cache; }; return cache; }
+
+function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } if (obj === null || typeof obj !== "object" && typeof obj !== "function") { return { default: obj }; } var cache = _getRequireWildcardCache(); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj.default = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
 
 const ListPage = () => {
-  const [model, setModel] = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(null);
-  const [sort, setSort] = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(null);
-  const [loading, setLoading] = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(true);
-  const [filter, setFilter] = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(null);
-  (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(() => {
+  const [model, setModel] = (0, _react.useState)(null);
+  const [sort, setSort] = (0, _react.useState)(null);
+  const [loading, setLoading] = (0, _react.useState)(true);
+  const [filter, setFilter] = (0, _react.useState)(null);
+  (0, _react.useEffect)(() => {
+    let mounted = true;
+
     if (true) {
       setLoading(true);
-      const testModel = new ts_model_test_model__WEBPACK_IMPORTED_MODULE_6__.default();
+      const testModel = new _testModel.default();
       testModel.fetch().then(() => {
-        setModel(testModel);
-        setLoading(false);
+        if (mounted) {
+          setModel(testModel);
+          setLoading(false);
+        }
       });
     }
+
+    return () => {
+      mounted = false;
+    };
   }, []);
 
   const onSort = function (field) {
@@ -294,7 +228,8 @@ const ListPage = () => {
 
   let tests = model?.tests;
   let count = 0;
-  let content = /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(components_spinner__WEBPACK_IMPORTED_MODULE_4__.default, null);
+
+  let content = /*#__PURE__*/_react.default.createElement(_spinner.default, null);
 
   if (tests?.length) {
     if (filter) {
@@ -309,7 +244,7 @@ const ListPage = () => {
       tests = tests.sort(sortFunc(field, dir));
     }
 
-    content = tests.map(t => /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(components_test__WEBPACK_IMPORTED_MODULE_1__.default, {
+    content = tests.map(t => /*#__PURE__*/_react.default.createElement(_item.default, {
       test: t,
       key: t.id
     }));
@@ -317,23 +252,23 @@ const ListPage = () => {
   }
 
   if (!loading && !tests?.length) {
-    content = /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(components_empty__WEBPACK_IMPORTED_MODULE_5__.default, {
+    content = /*#__PURE__*/_react.default.createElement(_empty.default, {
       onClear: () => onFilter("")
     });
   }
 
-  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+  return /*#__PURE__*/_react.default.createElement("div", {
     className: "container"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("h1", {
+  }, /*#__PURE__*/_react.default.createElement("h1", {
     className: "heading"
-  }, "Dashboard"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(components_search__WEBPACK_IMPORTED_MODULE_3__.default, {
+  }, "Dashboard"), /*#__PURE__*/_react.default.createElement(_search.default, {
     filter: filter,
     onFilter: onFilter,
     count: count
-  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(components_header__WEBPACK_IMPORTED_MODULE_2__.default, {
+  }), /*#__PURE__*/_react.default.createElement(_header.default, {
     sort: sort,
     onSort: onSort
-  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+  }), /*#__PURE__*/_react.default.createElement("div", {
     className: "content__wrapper"
   }, content));
 };
@@ -343,8 +278,10 @@ function sortFunc(field, dir) {
     case "status":
       {
         return (a, b) => {
-          const aIndex = ts_model_test_status__WEBPACK_IMPORTED_MODULE_7__.testStatus.findIndex(el => el.toLowerCase() === a.status.toLowerCase());
-          const bIndex = ts_model_test_status__WEBPACK_IMPORTED_MODULE_7__.testStatus.findIndex(el => el.toLowerCase() === b.status.toLowerCase());
+          const aIndex = _testStatus.testStatus.findIndex(el => el.toLowerCase() === a.status.toLowerCase());
+
+          const bIndex = _testStatus.testStatus.findIndex(el => el.toLowerCase() === b.status.toLowerCase());
+
           let res = aIndex - bIndex;
           return dir ? res : -res;
         };
@@ -363,7 +300,8 @@ function sortFunc(field, dir) {
   }
 }
 
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (ListPage);
+var _default = ListPage;
+exports.default = _default;
 
 /***/ }),
 
@@ -371,56 +309,74 @@ function sortFunc(field, dir) {
 /*!*********************************************!*\
   !*** ./src/ts/components/pages/results.tsx ***!
   \*********************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+/***/ ((__unused_webpack_module, exports, __webpack_require__) => {
 
 "use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (/* binding */ Results)
-/* harmony export */ });
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var react_router__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! react-router */ "./node_modules/react-router/esm/react-router.js");
-/* harmony import */ var ts_model_test_model__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ts/model/test-model */ "./src/ts/model/test-model.ts");
-/* harmony import */ var components_spinner__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! components/spinner */ "./src/ts/components/spinner.tsx");
-/* harmony import */ var css_results_scss__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! css/results.scss */ "./src/css/results.scss");
 
 
+Object.defineProperty(exports, "__esModule", ({
+  value: true
+}));
+exports.default = Results;
 
+var _react = _interopRequireWildcard(__webpack_require__(/*! react */ "./node_modules/react/index.js"));
 
+var _reactRouter = __webpack_require__(/*! react-router */ "./node_modules/react-router/esm/react-router.js");
+
+var _testModel = _interopRequireDefault(__webpack_require__(/*! ts/model/test-model */ "./src/ts/model/test-model.ts"));
+
+var _spinner = _interopRequireDefault(__webpack_require__(/*! components/parts/spinner */ "./src/ts/components/parts/spinner.tsx"));
+
+__webpack_require__(/*! css/results.scss */ "./src/css/results.scss");
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _getRequireWildcardCache() { if (typeof WeakMap !== "function") return null; var cache = new WeakMap(); _getRequireWildcardCache = function () { return cache; }; return cache; }
+
+function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } if (obj === null || typeof obj !== "object" && typeof obj !== "function") { return { default: obj }; } var cache = _getRequireWildcardCache(); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj.default = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
 
 function Results(props) {
   const {
     title
   } = props;
   const id = props?.match?.params?.testId;
-  const [model, setModel] = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(null);
-  const history = (0,react_router__WEBPACK_IMPORTED_MODULE_4__.useHistory)();
-  (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(() => {
+  const [model, setModel] = (0, _react.useState)(null);
+  const history = (0, _reactRouter.useHistory)();
+  (0, _react.useEffect)(() => {
+    let mounted = true;
+
     if (!model) {
-      const testModel = new ts_model_test_model__WEBPACK_IMPORTED_MODULE_1__.default();
+      const testModel = new _testModel.default();
       testModel.fetch().then(() => {
-        setModel(testModel);
+        if (mounted) {
+          setModel(testModel);
+        }
       });
     }
+
+    return () => {
+      mounted = false;
+    };
   }, [model]);
-  let content = /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(components_spinner__WEBPACK_IMPORTED_MODULE_2__.default, null);
+
+  let content = /*#__PURE__*/_react.default.createElement(_spinner.default, null);
 
   if (id && model?.tests) {
     const {
       name
     } = model.tests.find(el => el.id === +id);
-    content = /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("h3", {
+    content = /*#__PURE__*/_react.default.createElement(_react.default.Fragment, null, /*#__PURE__*/_react.default.createElement("h3", {
       className: "results__element"
     }, name));
   }
 
-  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+  return /*#__PURE__*/_react.default.createElement("div", {
     className: "container"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("h1", {
+  }, /*#__PURE__*/_react.default.createElement("h1", {
     className: "heading"
-  }, title), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+  }, title), /*#__PURE__*/_react.default.createElement("div", {
     className: "results__wrapper"
-  }, content), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("button", {
+  }, content), /*#__PURE__*/_react.default.createElement("button", {
     onClick: () => history.push("/"),
     className: "results__back"
   }, "back"));
@@ -428,88 +384,125 @@ function Results(props) {
 
 /***/ }),
 
-/***/ "./src/ts/components/search.tsx":
-/*!**************************************!*\
-  !*** ./src/ts/components/search.tsx ***!
-  \**************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+/***/ "./src/ts/components/parts/empty.tsx":
+/*!*******************************************!*\
+  !*** ./src/ts/components/parts/empty.tsx ***!
+  \*******************************************/
+/***/ ((__unused_webpack_module, exports, __webpack_require__) => {
 
 "use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (/* binding */ Search)
-/* harmony export */ });
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var css_search_scss__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! css/search.scss */ "./src/css/search.scss");
 
 
-function Search({
-  count,
-  filter,
-  onFilter
+Object.defineProperty(exports, "__esModule", ({
+  value: true
+}));
+exports.default = Empty;
+
+var _react = _interopRequireDefault(__webpack_require__(/*! react */ "./node_modules/react/index.js"));
+
+__webpack_require__(/*! css/empty.scss */ "./src/css/empty.scss");
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function Empty({
+  onClear
 }) {
-  const onChange = e => {
-    const value = e.target.value;
-    onFilter(value);
-  };
-
-  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
-    className: "search"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("input", {
-    type: "text",
-    placeholder: "What test are you looking for?",
-    value: filter || "",
-    onChange: onChange
-  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
-    className: "search__count"
-  }, count, " tests"));
+  return /*#__PURE__*/_react.default.createElement("div", {
+    className: "empty__wrapper"
+  }, /*#__PURE__*/_react.default.createElement("h3", {
+    className: "empty__message"
+  }, "Your search did not match any results."), /*#__PURE__*/_react.default.createElement("button", {
+    className: "empty__reset-button",
+    onClick: onClear
+  }, "reset"));
 }
 
 /***/ }),
 
-/***/ "./src/ts/components/spinner.tsx":
-/*!***************************************!*\
-  !*** ./src/ts/components/spinner.tsx ***!
-  \***************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+/***/ "./src/ts/components/parts/header.tsx":
+/*!********************************************!*\
+  !*** ./src/ts/components/parts/header.tsx ***!
+  \********************************************/
+/***/ ((__unused_webpack_module, exports, __webpack_require__) => {
 
 "use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (/* binding */ Spinner)
-/* harmony export */ });
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var css_spinner_scss__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! css/spinner.scss */ "./src/css/spinner.scss");
 
 
-function Spinner() {
-  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
-    className: "spinner__container"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
-    className: "spinner"
+Object.defineProperty(exports, "__esModule", ({
+  value: true
+}));
+exports.default = Header;
+
+var _react = _interopRequireDefault(__webpack_require__(/*! react */ "./node_modules/react/index.js"));
+
+__webpack_require__(/*! css/header.scss */ "./src/css/header.scss");
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
+
+function Header(props) {
+  return /*#__PURE__*/_react.default.createElement("header", {
+    className: "header__grid"
+  }, /*#__PURE__*/_react.default.createElement(Section, _extends({
+    field: "name"
+  }, props)), /*#__PURE__*/_react.default.createElement(Section, _extends({
+    field: "type"
+  }, props)), /*#__PURE__*/_react.default.createElement(Section, _extends({
+    field: "status"
+  }, props)), /*#__PURE__*/_react.default.createElement(Section, _extends({
+    field: "site"
+  }, props)), /*#__PURE__*/_react.default.createElement("section", {
+    className: "header__section"
   }));
 }
 
+function Section(props) {
+  const {
+    field,
+    sort,
+    onSort
+  } = props;
+  const className = ["header__section"];
+
+  if (sort && sort.field === field) {
+    className.push("header__section-sort-" + (sort.dir ? "asc" : "desc"));
+  }
+
+  return /*#__PURE__*/_react.default.createElement("section", {
+    className: className.join(" ")
+  }, /*#__PURE__*/_react.default.createElement("button", {
+    onClick: () => onSort(field)
+  }, /*#__PURE__*/_react.default.createElement("span", {
+    tabIndex: -1
+  }, field)));
+}
+
 /***/ }),
 
-/***/ "./src/ts/components/test.tsx":
-/*!************************************!*\
-  !*** ./src/ts/components/test.tsx ***!
-  \************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+/***/ "./src/ts/components/parts/item.tsx":
+/*!******************************************!*\
+  !*** ./src/ts/components/parts/item.tsx ***!
+  \******************************************/
+/***/ ((__unused_webpack_module, exports, __webpack_require__) => {
 
 "use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (/* binding */ Test)
-/* harmony export */ });
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/esm/react-router-dom.js");
-/* harmony import */ var css_test_scss__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! css/test.scss */ "./src/css/test.scss");
 
 
+Object.defineProperty(exports, "__esModule", ({
+  value: true
+}));
+exports.default = Item;
 
-function Test(props) {
+var _react = _interopRequireDefault(__webpack_require__(/*! react */ "./node_modules/react/index.js"));
+
+var _reactRouterDom = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/esm/react-router-dom.js");
+
+__webpack_require__(/*! css/test.scss */ "./src/css/test.scss");
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function Item(props) {
   const {
     test: {
       id,
@@ -528,20 +521,20 @@ function Test(props) {
     };
   }
 
-  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+  return /*#__PURE__*/_react.default.createElement("div", {
     className: "test__container",
     style: style
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+  }, /*#__PURE__*/_react.default.createElement("div", {
     className: "test__grid"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("section", {
+  }, /*#__PURE__*/_react.default.createElement("section", {
     className: "test__section test__section-name"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("h3", null, name)), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("section", {
+  }, /*#__PURE__*/_react.default.createElement("h3", null, name)), /*#__PURE__*/_react.default.createElement("section", {
     className: "test__section test__section-type"
-  }, type), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(Status, {
+  }, type), /*#__PURE__*/_react.default.createElement(Status, {
     status: status
-  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("section", {
+  }), /*#__PURE__*/_react.default.createElement("section", {
     className: "test__section test__section-site"
-  }, site), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(TestButton, {
+  }, site), /*#__PURE__*/_react.default.createElement(TestButton, {
     status: status,
     id: id
   })));
@@ -568,7 +561,7 @@ function TestButton({
       className.push(` test__button-${dest}`);
   }
 
-  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__.Link, {
+  return /*#__PURE__*/_react.default.createElement(_reactRouterDom.Link, {
     to: `/${dest}/${id}`,
     className: className.join(" ")
   }, dest);
@@ -597,9 +590,84 @@ function Status({
       break;
   }
 
-  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("section", {
+  return /*#__PURE__*/_react.default.createElement("section", {
     className: className.join(" ")
   }, status.toLowerCase());
+}
+
+/***/ }),
+
+/***/ "./src/ts/components/parts/search.tsx":
+/*!********************************************!*\
+  !*** ./src/ts/components/parts/search.tsx ***!
+  \********************************************/
+/***/ ((__unused_webpack_module, exports, __webpack_require__) => {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", ({
+  value: true
+}));
+exports.default = Search;
+
+var _react = _interopRequireDefault(__webpack_require__(/*! react */ "./node_modules/react/index.js"));
+
+__webpack_require__(/*! css/search.scss */ "./src/css/search.scss");
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function Search({
+  count,
+  filter,
+  onFilter
+}) {
+  const onChange = e => {
+    const value = e.target.value;
+    onFilter(value);
+  };
+
+  return /*#__PURE__*/_react.default.createElement("div", {
+    className: "search"
+  }, /*#__PURE__*/_react.default.createElement("input", {
+    type: "text",
+    placeholder: "What test are you looking for?",
+    value: filter || "",
+    onChange: onChange
+  }), /*#__PURE__*/_react.default.createElement("div", {
+    className: "search__count"
+  }, count, " tests"));
+}
+
+/***/ }),
+
+/***/ "./src/ts/components/parts/spinner.tsx":
+/*!*********************************************!*\
+  !*** ./src/ts/components/parts/spinner.tsx ***!
+  \*********************************************/
+/***/ ((__unused_webpack_module, exports, __webpack_require__) => {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", ({
+  value: true
+}));
+exports.default = Spinner;
+
+var _react = _interopRequireDefault(__webpack_require__(/*! react */ "./node_modules/react/index.js"));
+
+__webpack_require__(/*! css/spinner.scss */ "./src/css/spinner.scss");
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function Spinner() {
+  return /*#__PURE__*/_react.default.createElement("div", {
+    className: "spinner__container"
+  }, /*#__PURE__*/_react.default.createElement("div", {
+    className: "spinner",
+    "data-testid": "spinner-element"
+  }));
 }
 
 /***/ }),
@@ -608,16 +676,18 @@ function Status({
 /*!**************************************!*\
   !*** ./src/ts/model/data-service.ts ***!
   \**************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+/***/ ((__unused_webpack_module, exports) => {
 
 "use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "fetchSites": () => (/* binding */ fetchSites),
-/* harmony export */   "fetchTests": () => (/* binding */ fetchTests)
-/* harmony export */ });
+
+
+Object.defineProperty(exports, "__esModule", ({
+  value: true
+}));
+exports.fetchTests = exports.fetchSites = void 0;
 //const BaseUrl = "http://localhost:3100/"
 const BaseUrl = "https://test-task-kameleoon.herokuapp.com/";
+
 const fetchSites = async function () {
   const url = `${BaseUrl}sites`;
   const res = await fetch(url);
@@ -628,6 +698,9 @@ const fetchSites = async function () {
 
   return await res.json();
 };
+
+exports.fetchSites = fetchSites;
+
 const fetchTests = async function () {
   const url = `${BaseUrl}tests`;
   const res = await fetch(url);
@@ -639,30 +712,36 @@ const fetchTests = async function () {
   return await res.json();
 };
 
+exports.fetchTests = fetchTests;
+
 /***/ }),
 
 /***/ "./src/ts/model/test-model.ts":
 /*!************************************!*\
   !*** ./src/ts/model/test-model.ts ***!
   \************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+/***/ ((__unused_webpack_module, exports, __webpack_require__) => {
 
 "use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (/* binding */ TestModel)
-/* harmony export */ });
-/* harmony import */ var _data_service__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./data-service */ "./src/ts/model/data-service.ts");
+
+
+Object.defineProperty(exports, "__esModule", ({
+  value: true
+}));
+exports.default = void 0;
+
+var _dataService = __webpack_require__(/*! ./data-service */ "./src/ts/model/data-service.ts");
 
 const colors = ["rgb(134, 134, 255)", "rgb(225, 65, 101)", "rgb(194,194,255)"];
+
 class TestModel {
   constructor() {
     this.tests = [];
   }
 
   async fetch() {
-    const tests = await (0,_data_service__WEBPACK_IMPORTED_MODULE_0__.fetchTests)();
-    const sites = await (0,_data_service__WEBPACK_IMPORTED_MODULE_0__.fetchSites)();
+    const tests = await (0, _dataService.fetchTests)();
+    const sites = await (0, _dataService.fetchSites)();
     this.tests = tests.map(t => {
       let url = sites.find(s => s.id === t.siteId).url;
       url = url.replace(/https?:\/\/(?:www.)?/, "");
@@ -675,6 +754,8 @@ class TestModel {
 
 }
 
+exports.default = TestModel;
+
 function addColor(id) {
   return colors[Math.floor(id % colors.length)];
 }
@@ -685,14 +766,17 @@ function addColor(id) {
 /*!*************************************!*\
   !*** ./src/ts/model/test-status.ts ***!
   \*************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+/***/ ((__unused_webpack_module, exports) => {
 
 "use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "testStatus": () => (/* binding */ testStatus)
-/* harmony export */ });
+
+
+Object.defineProperty(exports, "__esModule", ({
+  value: true
+}));
+exports.testStatus = void 0;
 const testStatus = ["Online", "Paused", "Stopped", "Draft"];
+exports.testStatus = testStatus;
 
 /***/ }),
 
@@ -34773,18 +34857,21 @@ var __webpack_exports__ = {};
 /*!**************************!*\
   !*** ./src/ts/index.tsx ***!
   \**************************/
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var react_dom__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-dom */ "./node_modules/react-dom/index.js");
-/* harmony import */ var css_styles_scss__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! css/styles.scss */ "./src/css/styles.scss");
-/* harmony import */ var css_null_scss__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! css/null.scss */ "./src/css/null.scss");
-/* harmony import */ var ts_components_app__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ts/components/app */ "./src/ts/components/app.tsx");
 
 
+var _react = _interopRequireDefault(__webpack_require__(/*! react */ "./node_modules/react/index.js"));
 
+var _reactDom = _interopRequireDefault(__webpack_require__(/*! react-dom */ "./node_modules/react-dom/index.js"));
 
+__webpack_require__(/*! css/styles.scss */ "./src/css/styles.scss");
 
-react_dom__WEBPACK_IMPORTED_MODULE_1__.render( /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(ts_components_app__WEBPACK_IMPORTED_MODULE_4__.default, null), document.querySelector("#app"));
+__webpack_require__(/*! css/null.scss */ "./src/css/null.scss");
+
+var _app = _interopRequireDefault(__webpack_require__(/*! ts/components/app */ "./src/ts/components/app.tsx"));
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+_reactDom.default.render( /*#__PURE__*/_react.default.createElement(_app.default, null), document.querySelector("#app"));
 })();
 
 /******/ })()
